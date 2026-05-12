@@ -4,7 +4,7 @@ class Tester:
         self.name = name
         deadline = True
 
-    def work_hard(self, name, deadline=True):
+    def work_hard(self, name, deadline):
         if deadline:
             print(self.name, 'Что ж, ещё часок поработаю!')
         else:
