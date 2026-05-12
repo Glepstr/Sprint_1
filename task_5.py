@@ -8,8 +8,11 @@ class TestCase:
         self.steps[step_number] = step_text
 
     def delete_step(self, step_number):
-        del self.steps[step_number]
-    
+        if step_number in self.steps:
+            del self.steps[step_number]
+        else:
+            print("Нет такого шага")
+
     def set_result(self, result=None):
         self.result = result
 
@@ -21,7 +24,7 @@ class TestCase:
 test_case_1 = TestCase(steps = {}, result = None)
 test_case_1.set_step(1, 'Перейти на сайт')
 test_case_1.set_step(3, 'Перейти в раздел Товары')
-test_case_1.delete_step(3)
+test_case_1.delete_step(4)
 test_case_1.set_step(2, 'Перейти в раздел Товары')
 test_case_1.set_step(3, 'Нажать кнопку «В корзину» у первого товара')
 test_case_1.set_result('Товар окажется в корзине')
